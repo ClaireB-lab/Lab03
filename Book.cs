@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab03
 {
-    public class Book : Product
+    public class Book : Product, IDisplayable
     {
         public string Author { get; set; }
         public Book() { }
@@ -13,6 +13,10 @@ namespace Lab03
             Author = author;
         }
         public override string GetDisplayText(string sep)  
+        {
+            return base.GetDisplayText(sep) + sep + Author;
+        }
+        public string getDisplayString(string sep)
         {
             return base.GetDisplayText(sep) + sep + Author;
         }

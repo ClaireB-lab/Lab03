@@ -28,6 +28,14 @@ namespace Lab03
             {
                 lstProducts.Items.Add(product.GetDisplayText(", "));
             }
+
+            var otherList = new List<IDisplayable>
+            {
+                new Book("B2", "The Godfather", 49.99m, "Mario Putzo"),
+                new Software("S2", "Windows 11", 440.99m, "Microsoft")
+            };
+
+            otherList.ForEach(x =.lstProducts.Items.Add(x.GetDisplayString(": ")));
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Lab03
 {
-    public class Software : Product
+    public class Software : Product, IDisplayable
     {
         public Software() { }
         public Software(string code, string description, decimal price, string company) : base(code, description, price)
@@ -13,6 +13,11 @@ namespace Lab03
             this.Company = company;
         }
         public string Company {  get; set; }
+
+        public string getDisplayString(string sep)
+        {
+            return base.GetDisplayText(sep) + sep + Company;
+        }
         public override string GetDisplayText(string sep)
         {
             return base.GetDisplayText(sep) + sep + Company;
